@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
@@ -6,13 +7,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ESTA ES LA CONFIGURACIÓN CORRECTA PARA TU RAILWAY
+// CONFIGURACIÓN QUE CORRIGE EL AggregateError
+// Si es conexión interna de Railway usa false, si es externa (localhost) usa ssl true
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: false
+  ssl: process.env.DATABASE_URL && process.env.DATABASE_URL.includes('railway.internal')
+   ? false
+    : { rejectUnauthorized: false }
 });
 
-// Ruta Raíz - La que ya te funciona
+// Ruta Raíz
 app.get('/', (req, res) => {
   res.json({ Resultado: "Bienvenido al Taller Despliegue Rest - Railway" });
 });
