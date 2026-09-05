@@ -2,8 +2,16 @@
   "name": "taller_api_nodejs_rest_pg",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/cesar02511/Taller_Api_NodeJs_Rest_Pg_Julio#readme",
+  "bugs": {
+    "url": "https://github.com/cesar02511/Taller_Api_NodeJs_Rest_Pg_Julio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesar02511/Taller_Api_NodeJs_Rest_Pg_Julio.git"
+  },
   "license": "ISC",
-  "author": "",
+  "author": "julio cesar urrea",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
@@ -11,6 +19,7 @@
   },
   "dependencies": {
     "dotenv": "^17.4.2",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "pg": "^8.23.0"
   }
 }
